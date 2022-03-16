@@ -1,3 +1,4 @@
+@import url('https://fonts.googleapis.com/css2?family=Fredoka&display=swap');
 *,
 *::after,
 *::before {
@@ -9,5 +10,141 @@ body {
   min-height: 100vh;
   display: flex;
   flex-direction: column;
-  background-color: rgb(133, 128, 128);
+  background-image: url("../images/fresh-colourful-ingredients-mexican-cuisine.jpg");
+  background-size: cover;
+  background-repeat: no-repeat;
+  font-family: 'Fredoka', sans-serif;
+  color: rgb(85, 85, 85);
+}
+.content{
+  width: 70%;
+  margin: 30px auto;
+  display: flex;
+}
+.menu__list{
+list-style: none;
+height: 580px;
+overflow-y: scroll;
+}
+.list2{
+  height: 550px;
+}
+.content__inner{
+  width: 45%;
+  height: 700px;
+  background-color: rgba(255, 255, 255, 0.664);
+  padding: 20px 40px ;
+  border-radius: 20px;
+  margin-right: 30px;
+}
+.content__cart{
+  position: relative;
+  width: 45%;
+  height: 700px;
+  background-color: rgba(255, 255, 255, 0.787);
+  padding: 20px 40px;
+  border-radius: 20px;
+}
+.menu__item{
+  display: flex;
+  margin-bottom: 20px;
+  background-color: #d0e5ebd0;
+  padding: 15px 10px;
+  border-radius: 10px;
+}
+
+.cart__item{
+  width: 90%;
+  display: flex;
+  margin-bottom: 20px;
+  background-color:#fbd57686;
+  padding: 15px 10px;
+  border-radius: 10px;
+  position: relative;
+  transition: all 0.4s ease;
+  /* animation: fade 1s ease; */
+
+}
+
+@keyframes fade {
+  0%{
+    transform: translate(0,30px);
+  }
+  100%{
+    transform: translate(0,0);
+  }
+}
+.menu__item img{
+  width: 100px;
+  height: 100px;
+  object-fit: cover;
+  margin: 0 12px;
+  border-radius: 50%;
+}
+.menu__item img{
+  width: 100px;
+  height: 100px;
+  object-fit: cover;
+  margin: 0 12px;
+  border-radius: 50%;
+} img{
+  width: 100px;
+  height: 100px;
+  object-fit: cover;
+  margin: 0 12px;
+  border-radius: 50%;
+}
+.title{
+  font-size: 32px;
+  margin-bottom: 26px;
+}
+.product__name{
+  font-size: 22px;
+  margin-bottom: 10px;
+}
+.product__price{
+  margin-bottom: 20px;
+  color: #699700;
+  font-weight: bold;
+}
+.add__btn{
+  background-color: #97aac2;
+  cursor: pointer;
+  color: #fff;
+  border: none;
+  padding: 6px 12px;
+  font-size: 12px;
+  border-radius: 10px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.remove__btn{
+  position: absolute;
+  bottom: -16px;
+  right: -16px;
+  cursor: pointer;
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  background-color: #f8c33c;
+  border: none;
+  font-size: 20px;
+  color: #fff;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.prices__box{
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  display: flex;
+  justify-content: space-around;
+  margin-top: 10px;
+  width: 100%;
+  background-color: #fbd57686;
+  padding: 10px 10px;
+  border-bottom-left-radius: 20px;
+  border-bottom-right-radius: 20px;
 }

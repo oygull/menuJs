@@ -8,13 +8,30 @@
   <title>Document</title>
   <link rel="stylesheet" href="https://necolas.github.io/normalize.css/8.0.1/normalize.css">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/flexboxgrid/6.3.1/flexboxgrid.min.css">
+  <link href='https://unpkg.com/boxicons@2.1.2/css/boxicons.min.css' rel='stylesheet'>
   <link rel="stylesheet" href="css/style.css">
 </head>
 
 <body>
 
-  
- </div>
+  <div class="content">
+    <div class="content__inner">
+      <h1 class="title">Our Menu</h1>
+      <ul id="menuList" class="menu__list">
+      </ul>
+    </div>
+    <div class="content__cart">
+      <h1 class="title">My cart</h1>
+      <ul  id="cardList" class="menu__list list2">
+      </ul>
+      <div class="prices__box">
+        <p id="subPrice" class="sub-price">Subtotal: $0 </p>
+        <p id="tax" class="tax">Tax: $0</p>
+        <p id="total" class="total-price">Total: $0 </p>
+      </div>
+    </div>
+  </div>
+
 
 
   <script src="js/main.js">
