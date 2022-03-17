@@ -63,10 +63,11 @@ function addCart(e){
   for(let i=0; i<foodArr.length; i++){
     if(foodArr[i].id==e){
       newArr.push(foodArr[i])
-      elCardList.innerHTML ='';
        subtotal = 0;
        tax = 0;
        total = 0;
+      }
+      elCardList.innerHTML ='';
       for (let i=0; i<newArr.length; i++){
         subtotal += newArr[i].price;
         tax= subtotal*0.1;
@@ -83,8 +84,6 @@ function addCart(e){
       subPrice.innerHTML=`Subtotal: $ ${subtotal}`;
       elTax.innerHTML = `Tax: $ ${tax}`;
       elTotal.innerHTML = `Total: $ ${total}`;
-      }
-    
   }
 let btns = document.querySelectorAll(".remove__btn")
 for (let i=0; i<btns.length; i++){
