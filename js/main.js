@@ -92,15 +92,14 @@ function sortItems(par){
       if (k != "") b.push(k);
 
   }
-  for (let i = 0; i < b.length; i++){
-   times = b[i].length;
-  }
+ 
 
   elCardList.innerHTML ='';
 
+  times=0;
 
 for(let i=0; i<b.length; i++){
-
+  times = b[i].length
   let li = document.createElement("li");
   li.className = "menu__item pizza cart__item";
   li.innerHTML = `<img src="${b[i][0].imgUrl}" alt="pizza">
