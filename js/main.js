@@ -44,7 +44,7 @@ let foodArr = [
     price: 30
   }
 ]
-let times = 1;
+
 for (let i=0; i<foodArr.length; i++){
   let li = document.createElement("li");
   li.innerHTML = ` <img src="${foodArr[i].imgUrl}" alt="pizza">
@@ -69,14 +69,14 @@ function addCart(e){
   }
 
 sortItems(newArr)
-times++;
+
   
 }
 
 
 
 function sortItems(par){
-
+let times = 0;
   let b = [];
   let count = par.length;
   
@@ -93,8 +93,17 @@ function sortItems(par){
       }
       par = f;
       if (k != "") b.push(k);
+
   }
+  for (let i = 0; i < b.length; i++){
+   times = b[i].length;
+  }
+
+
   elCardList.innerHTML ='';
+
+
+
 for(let i=0; i<b.length; i++){
 
   let li = document.createElement("li");
@@ -133,8 +142,9 @@ function removeItem(index){
   subtotal = 0;
   tax = 0;
   total = 0;
+
   sortItems(newArr)
-  times--;
+
   if(newArr.length==0){
     subtotal=0;
     tax = 0;
