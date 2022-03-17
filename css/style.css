@@ -54,16 +54,14 @@ overflow-y: scroll;
 }
 
 .cart__item{
-  width: 90%;
+  width: 95%;
   display: flex;
   margin-bottom: 20px;
   background-color:#fbd57686;
   padding: 15px 10px;
   border-radius: 10px;
   position: relative;
-  transition: all 0.4s ease;
-  /* animation: fade 1s ease; */
-
+  animation: fade 0.6s ease alternate;
 }
 
 @keyframes fade {
@@ -103,7 +101,7 @@ overflow-y: scroll;
   margin-bottom: 10px;
 }
 .product__price{
-  margin-bottom: 20px;
+  margin-bottom: 16px;
   color: #699700;
   font-weight: bold;
 }
@@ -120,17 +118,13 @@ overflow-y: scroll;
   justify-content: center;
 }
 .remove__btn{
-  position: absolute;
-  bottom: -16px;
-  right: -16px;
-  cursor: pointer;
-  width: 50px;
-  height: 50px;
-  border-radius: 50%;
   background-color: #f8c33c;
-  border: none;
-  font-size: 20px;
+  cursor: pointer;
   color: #fff;
+  border: none;
+  padding: 6px 12px;
+  font-size: 12px;
+  border-radius: 10px;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -147,4 +141,20 @@ overflow-y: scroll;
   padding: 10px 10px;
   border-bottom-left-radius: 20px;
   border-bottom-right-radius: 20px;
+}
+.count-times{
+  position: absolute;
+  bottom: -12px;
+  right: -12px;
+  cursor: pointer;
+  width: 35px;
+  height: 35px;
+  border-radius: 50%;
+  background-color: #f8c33c;
+  border: none;
+  font-size: 18px;
+  color: #fff;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }

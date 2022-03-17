@@ -34,17 +34,17 @@ let foodArr = [
   {
     id: 5,
     imgUrl: 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRZVR6G-fJmglFlVxrqbMDftbjMh8rjwa9ulg_XnDMAHdVMOYOJNqJI9zEjRapm0pXKUIY&usqp=CAU' ,
-    name: 'Margaritta',
+    name: 'Barbeque',
     price: 10
   },
   {
     id: 6,
     imgUrl: 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRZVR6G-fJmglFlVxrqbMDftbjMh8rjwa9ulg_XnDMAHdVMOYOJNqJI9zEjRapm0pXKUIY&usqp=CAU' ,
-    name: 'Margaritta',
+    name: 'Alfredo',
     price: 30
   }
 ]
-
+let times = 1;
 for (let i=0; i<foodArr.length; i++){
   let li = document.createElement("li");
   li.innerHTML = ` <img src="${foodArr[i].imgUrl}" alt="pizza">
@@ -59,54 +59,90 @@ for (let i=0; i<foodArr.length; i++){
 let newArr = [];
 let elBtn = document.querySelectorAll(".add__btn");
 
+elCardList.innerHTML ='';
+
 function addCart(e){
   for(let i=0; i<foodArr.length; i++){
     if(foodArr[i].id==e){
       newArr.push(foodArr[i])
-       subtotal = 0;
-       tax = 0;
-       total = 0;
       }
-      elCardList.innerHTML ='';
-      for (let i=0; i<newArr.length; i++){
-        subtotal += newArr[i].price;
-        tax= subtotal*0.1;
-        total = subtotal+tax;
-        let li = document.createElement("li");
-        li.innerHTML = ` <img src="${newArr[i].imgUrl}" alt="pizza">
-        <div class="product__desc">
-          <h2 class="product__name">${newArr[i].name}</h2>
-          <p class="product__price">${newArr[i].price} $</p>
-          <button  id="${newArr[i].id}" class="remove__btn">-</button>  </div>`
-        li.classList.add("cart__item");
-        elCardList.appendChild(li);
-      }
-      subPrice.innerHTML=`Subtotal: $ ${subtotal}`;
-      elTax.innerHTML = `Tax: $ ${tax}`;
-      elTotal.innerHTML = `Total: $ ${total}`;
   }
-let btns = document.querySelectorAll(".remove__btn")
-for (let i=0; i<btns.length; i++){
-  btns[i].addEventListener("click", removeItem)
-}
+
+sortItems(newArr)
+times++;
+  
 }
 
 
-function removeItem(e){
- let a = e.target;
- a.parentNode.parentNode.remove();
- subtotal = 0;
- tax = 0;
- total = 0;
- subPrice.innerHTML=`Subtotal: $ ${subtotal}`;
- elTax.innerHTML = `Tax: $ ${tax}`;
- elTotal.innerHTML = `Total: $ ${total}`;
- newArr=[];
+
+function sortItems(par){
+
+  let b = [];
+  let count = par.length;
+  
+  for (let i = 0; i < count; i++) {
+  
+      let k = [];
+      let f = [];
+      for (let j = 0; j < par.length; j++) {
+          if(par[0].id == par[j].id) {
+              k.push(par[j]);
+          } else {
+              f.push(par[j]);
+          }
+      }
+      par = f;
+      if (k != "") b.push(k);
+  }
+  elCardList.innerHTML ='';
+for(let i=0; i<b.length; i++){
+
+  let li = document.createElement("li");
+  li.className = "menu__item pizza cart__item";
+  li.innerHTML = `<img src="${b[i][0].imgUrl}" alt="pizza">
+  <div class="product__desc">
+    <h2 class="product__name">${b[i][0].name}</h2>
+    <p class="product__price">${b[i][0].price} $</p>
+    <button onclick="removeItem(${i})"  class="remove__btn">Remove</button> 
+    <button   class="count-times">${times} x</button> 
+     </div>`;
+    elCardList.appendChild(li);
+
+    subtotal += newArr[i].price;
+    tax= subtotal*0.1;
+    total = subtotal+tax;
+
+    subPrice.innerHTML=`Subtotal: $ ${subtotal}`;
+    elTax.innerHTML = `Tax: $ ${tax}`;
+    elTotal.innerHTML = `Total: $ ${total}`;
+}
+
+}
+
+
+function removeItem(index){
+  let newArrRemove = [];
+  for (let i = 0; i < newArr.length; i++) {
+  
+    if (index != i) {
+      newArrRemove.push(newArr[i]);
+    }
+  }
+  newArr = newArrRemove;
+  elCardList.innerHTML = "";
+  subtotal = 0;
+  tax = 0;
+  total = 0;
+  sortItems(newArr)
+  times--;
+  if(newArr.length==0){
+    subtotal=0;
+    tax = 0;
+    total = 0;
+  }
+  subPrice.innerHTML=`Subtotal: $ ${subtotal}`;
+  elTax.innerHTML = `Tax: $ ${tax}`;
+  elTotal.innerHTML = `Total: $ ${total}`;
  }
-
-
-
-
-
 
 
