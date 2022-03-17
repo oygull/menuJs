@@ -93,7 +93,6 @@ function sortItems(par){
 
   }
  
-
   elCardList.innerHTML ='';
 
   times=0;
