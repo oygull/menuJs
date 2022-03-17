@@ -70,13 +70,10 @@ function addCart(e){
 
 sortItems(newArr)
 
-  
 }
-
-
-
-function sortItems(par){
 let times = 0;
+function sortItems(par){
+
   let b = [];
   let count = par.length;
   
@@ -99,9 +96,7 @@ let times = 0;
    times = b[i].length;
   }
 
-
   elCardList.innerHTML ='';
-
 
 
 for(let i=0; i<b.length; i++){
@@ -112,7 +107,10 @@ for(let i=0; i<b.length; i++){
   <div class="product__desc">
     <h2 class="product__name">${b[i][0].name}</h2>
     <p class="product__price">${b[i][0].price} $</p>
+    <div class="btn-box">
     <button onclick="removeItem(${i})"  class="remove__btn">Remove</button> 
+    <button onclick="addCart(${foodArr[i].id})" class="remove__btn">Add</button>
+  </div>
     <button   class="count-times">${times} x</button> 
      </div>`;
     elCardList.appendChild(li);
