@@ -117,6 +117,9 @@ overflow-y: scroll;
   align-items: center;
   justify-content: center;
 }
+.add__btn:hover{
+  background-color: #66abff;
+}
 .remove__btn{
   background-color: #f8c33c;
   cursor: pointer;
@@ -129,6 +132,9 @@ overflow-y: scroll;
   align-items: center;
   justify-content: center;
   margin-right: 10px;
+}
+.remove__btn:hover{
+  background-color: #e9a700;
 }
 .prices__box{
   position: absolute;
