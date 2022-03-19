@@ -116,6 +116,7 @@ overflow-y: scroll;
   display: flex;
   align-items: center;
   justify-content: center;
+  transition: all 0.4s ease;
 }
 .add__btn:hover{
   background-color: #66abff;
@@ -132,6 +133,7 @@ overflow-y: scroll;
   align-items: center;
   justify-content: center;
   margin-right: 10px;
+  transition: all 0.4s ease;
 }
 .remove__btn:hover{
   background-color: #e9a700;
