@@ -131,7 +131,7 @@ function sortItems () {
               <div class="product__desc">
                   <button class="count-times count-btn">${newArr[i].count} x</button>
                   <h3 class="product__name">${newArr[i].name}</h3>
-                  <p class="product__price">$ ${newArr[i].price * newArr[i].count}</p>
+                  <p class="product__price">$ ${newArr[i].taxiPrice}</p>
                   <div class="btn-box">
                   <button onclick = "removeItem(${i})"  class="remove__btn">Remove</button>
                   <button   class="remove__btn" onclick="addButton(${i})">Add</button>
